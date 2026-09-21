@@ -1,6 +1,6 @@
-IMAGE ?= stm32c0-wokwi-build:local
+IMAGE ?= benchlevel-build:local
 
-.PHONY: image build clean
+.PHONY: image build clean flash monitor
 
 image:
 	docker build -t $(IMAGE) docker
@@ -12,3 +12,6 @@ build: image
 
 clean:
 	$(MAKE) -C firmware clean
+
+flash monitor:
+	@echo 'VS Code: F1 -> Wokwi: Start Simulator. UART opens inside the simulator.'
