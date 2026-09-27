@@ -1,0 +1,39 @@
+{
+  "builds": [
+    {
+      "actual_start_utc": "2026-10-16T11:56:06.228715+00:00",
+      "artifacts": {
+        "elf": {
+          "sha256": "46eea9763ab3c743c5f9196b8bd51d91dd6455024d25016d8341a3f987e53953",
+          "bytes": 396436
+        },
+        "hex": {
+          "sha256": "613fb1dac81a4e17111f1dcd31b9d568ea20c165797054f362522989d18f9f07",
+          "bytes": 42962
+        },
+        "bin": {
+          "sha256": "77db217286018082d108db11ba63f44d87fa08ec19442804fa4bb1b4e8865484",
+          "bytes": 15248
+        }
+      }
+    },
+    {
+      "actual_start_utc": "2026-10-16T11:56:10.968981+00:00",
+      "artifacts": {
+        "elf": {
+          "sha256": "46eea9763ab3c743c5f9196b8bd51d91dd6455024d25016d8341a3f987e53953",
+          "bytes": 396436
+        },
+        "hex": {
+          "sha256": "613fb1dac81a4e17111f1dcd31b9d568ea20c165797054f362522989d18f9f07",
+          "bytes": 42962
+        },
+        "bin": {
+          "sha256": "77db217286018082d108db11ba63f44d87fa08ec19442804fa4bb1b4e8865484",
+          "bytes": 15248
+        }
+      }
+    }
+  ],
+  "equal": true
+}

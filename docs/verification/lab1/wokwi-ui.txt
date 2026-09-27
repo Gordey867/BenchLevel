@@ -1,0 +1,473 @@
+Window: "Wokwi Simulator — BenchLevel", App: Code.
+0 standard window Wokwi Simulator — BenchLevel, Secondary Actions: Raise
+	1 container Wokwi Simulator — BenchLevel
+		2 container
+			3 HTML content Wokwi Simulator — BenchLevel, URL: vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html
+				4 container
+					5 container
+						6 container
+							7 toolbar
+								8 button (disabled) Go Back (⌃-)
+									9 text 
+								10 button (disabled) Go Forward (⌃⇧-)
+									11 text 
+								12 toolbar Agent Status
+									13 button Open Quick Access
+									14 container
+										15 button Toggle Chat
+											16 button Toggle Chat
+												17 text 
+										18 pop up button More Actions
+							19 toolbar
+								20 button Open in Agents Window (⇧⌥⌘A)
+							21 toolbar Title actions
+								22 button Customize Layout...
+									23 text 
+								24 toggle button Description: Toggle Primary Side Bar (⌘B), Value: 1
+									25 text 
+								26 toggle button Description: Toggle Panel (⌘J), Value: 1
+									27 text 
+								28 toggle button Description: Toggle Secondary Side Bar (⌥⌘B), Value: 1
+									29 text 
+						30 container
+							31 container
+								32 tab group Active View Switcher
+									33 tab (selected) Explorer (⇧⌘E), Value: 1
+										34 container Explorer (⇧⌘E)
+											35 text 
+									36 tab (settable, integer) Search (⇧⌘F), Value: 0
+										37 container Search (⇧⌘F)
+											38 text 
+									39 tab (settable, integer) Description: Source Control (⌃⇧G) - 20 pending changes, Value: 0
+										40 container Source Control (⌃⇧G) - 20 pending changes
+											41 text 
+										42 container Source Control (⌃⇧G) - 20 pending changes
+											43 text 20
+									44 tab (settable, integer) Run and Debug (⇧⌘D), Value: 0
+										45 container Run and Debug (⇧⌘D)
+											46 text 
+									47 tab (settable, integer) Remote Explorer, Value: 0
+										48 container Remote Explorer
+											49 text 
+									50 tab (settable, integer) Description: Extensions (⇧⌘X) - Deprecated extensions detected. Review them and migrate to alternatives., Value: 0
+										51 container Extensions (⇧⌘X) - Deprecated extensions detected. Review them and migrate to alternatives.
+											52 text 
+										53 container Extensions (⇧⌘X) - Deprecated extensions detected. Review them and migrate to alternatives.
+											54 text 
+									55 tab (settable, integer) Description: GitLens, Value: 0
+										56 container GitLens
+											57 text 
+									58 tab (settable, integer) GitLens Inspect, Value: 0
+										59 container GitLens Inspect
+											60 text 
+									61 tab (settable, integer) Description: GitHub Actions, Value: 0
+										62 container GitHub Actions
+									63 tab (settable, integer) Description: Containers, Value: 0
+										64 container Containers
+									65 tab (settable, integer) Description: Docker Compose, Value: 0
+										66 container Docker Compose
+									67 tab (settable, integer) Description: TODOs, Value: 0
+										68 container TODOs
+									69 tab (settable, integer) Python, Value: 0
+										70 container Python
+									71 tab (settable, integer) Description: Additional Views, Value: 0
+										72 container Additional Views
+											73 text 
+								74 toolbar Manage
+									75 pop up button Accounts
+										76 container Accounts
+											77 text 
+									78 pop up button Manage
+										79 container Manage
+											80 text 
+							81 container
+								82 heading Explorer, Value: 2
+									83 text Explorer
+								84 toolbar Explorer actions
+									85 pop up button Views and More Actions...
+								86 container
+									87 container
+										88 button Explorer Section: BenchLevel
+											89 text 
+											90 heading Description: Explorer Section: BenchLevel, Value: 3
+												91 text BenchLevel
+										92 outline Files Explorer
+											93 container
+												94 row docker
+													95 container
+														96 text 
+														97 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/docker • Contains emphasized items
+															98 text docker
+															99 text 
+												100 row docs
+													101 container
+														102 text 
+														103 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/docs • Contains emphasized items
+															104 text docs
+															105 text 
+												106 row firmware
+													107 container
+														108 text 
+														109 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/firmware • Contains emphasized items
+															110 text firmware
+															111 text 
+												112 row .gitignore
+													113 container
+														114 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/.gitignore
+															115 text .gitignore
+												116 row diagram.json
+													117 container
+														118 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/diagram.json • Modified
+															119 text diagram.json
+															120 text M
+												121 row LICENSE
+													122 container
+														123 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/LICENSE
+															124 text LICENSE
+												125 row Makefile
+													126 container
+														127 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/Makefile • Modified
+															128 text Makefile
+															129 text M
+												130 row README.md
+													131 container
+														132 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/README.md • Modified
+															133 text README.md
+															134 text M
+												135 row wokwi.toml
+													136 container
+														137 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/wokwi.toml
+															138 text wokwi.toml
+												139 row wokwi.vcd
+													140 container
+														141 container ~/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel/wokwi.vcd
+															142 text wokwi.vcd
+									143 button Outline Section
+										144 text 
+										145 heading Outline, Value: 3
+											146 text Outline
+									147 button Timeline Section
+										148 text 
+										149 heading Timeline, Value: 3
+											150 text Timeline
+							151 container
+								152 container
+								153 container
+									154 container
+										155 container
+											156 tab group
+												157 tab (selected) Description: Wokwi Simulator, Value: 1
+													158 container Wokwi Simulator
+														159 text Wokwi Simulator
+													160 toolbar Tab actions
+														161 button Close (⌘W)
+															162 text 
+											163 toolbar Editor actions
+												164 button Run Code (⌃⌥N)
+													165 text 
+												166 button Split Editor Right (⌘\) [⌥] Split Editor Down
+													167 text 
+												168 pop up button More Actions...
+													169 text 
+								170 container
+									171 tab group Active View Switcher
+										172 tab (settable, integer) Problems (⇧⌘M), Value: 0
+											173 container Problems (⇧⌘M)
+												174 text Problems
+										175 tab (selected) Terminal (⌃`), Value: 1
+											176 container Terminal (⌃`)
+												177 text Terminal
+										178 tab (settable, integer) Description: Additional Views, Value: 0
+											179 container Additional Views
+												180 text 
+									181 toolbar Terminal actions
+										182 button Focus Terminal (⌘↓) [⌥] Split Terminal (⌘\)
+											183 text A
+											184 text Wokwi Terminal
+										185 button New Terminal (⌃⇧`) [⌥] Split Terminal (⌘\)
+											186 button New Terminal (⌃⇧`) [⌥] Split Terminal (⌘\)
+										187 pop up button Launch Profile...
+										188 button Split Terminal (⌘\)
+										189 button Kill Terminal
+										190 pop up button Views and More Actions...
+									191 toolbar
+										192 toggle button Description: Maximize Panel, Value: 0
+											193 text 
+										194 button Hide Panel (⌘J)
+											195 text 
+									196 container
+										197 container
+											198 container
+												199 container
+													200 content list
+														201 text tick 1
+														202 text probe addr=0x68 status=0
+														203 text tick 2
+														204 text probe addr=0x68 status=0
+														205 text tick 3
+														206 text probe addr=0x68 status=0
+														207 text tick 4
+														208 text probe addr=0x68 status=0
+														209 text tick 5
+														210 text probe addr=0x68 status=0
+														211 text tick 6
+														212 text probe addr=0x68 status=0
+														213 text tick 7
+														214 text probe addr=0x68 status=0
+														215 text tick 8
+														216 text probe addr=0x68 status=0
+														217 text tick 9
+														218 text probe addr=0x68 status=0
+														219 text tick 10
+													220 text atus=0 probe addr=0x68 status=0 tick 8 probe addr=0x68 status=0 tick 9 probe addr=0x68 status=0 tick 10
+													221 image
+													222 text field (settable) Terminal 1, Wokwi Terminal Use ⌥F1 for terminal accessibility help
+													223 image
+													224 image
+							225 container
+								226 tab group Active View Switcher
+									227 tab (selected) Chat (⌃⌘I), Value: 1
+										228 container Chat (⌃⌘I)
+											229 text Chat
+								230 toolbar Chat actions
+									231 button New Chat (⌘N)
+									232 pop up button New Chat
+									233 button Open Customizations
+									234 pop up button Views and More Actions...
+								235 toolbar
+									236 toggle button Description: Maximize Secondary Side Bar, Value: 0
+										237 text 
+									238 button Hide Secondary Side Bar (⌥⌘B)
+										239 text 
+								240 container
+									241 container
+										242 text Sessions
+										243 toolbar
+											244 button Refresh Agent Sessions
+												245 text 
+											246 button Find Agent Session
+												247 text 
+											248 pop up button Filter Agent Sessions
+												249 text 
+											250 button Show Agent Sessions Sidebar
+												251 text 
+										252 outline Agent Sessions
+										253 container
+											254 toolbar Session status
+												255 button Uncommitted Changes: 22 Files, +11884, -14
+													256 text 22 Files
+													257 text +11884
+													258 text -14
+											259 container Tip: Configure default permissions to start new sessions in Bypass Approvals or Autopilot mode. Tab to reach the action.
+												260 container
+													261 text Tip:  Configure 
+													262 link Description: default permissions, Value: vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html
+													263 text  to start new sessions in Bypass Approvals or Autopilot mode.
+												264 toolbar
+													265 button Previous tip
+														266 text 
+													267 button Next tip
+														268 text 
+													269 button Dismiss tip
+														270 text 
+													271 button Disable tips
+														272 text 
+											273 container
+												274 container
+													275 editor (settable) Description: Chat Input (Agent), edit files in your workspace., Auto. Press Enter to send out the request. Use ⌥F1 for Chat Accessibility Help., Value: 
+
+													276 text Chat with Copilot
+												277 toolbar
+													278 button Add Context... (⌘/)
+														279 text 
+													280 pop up button Agent
+														281 text 
+														282 text Agent
+													283 container Models, Auto
+														284 pop up button Models, Auto
+															285 text 
+															286 text Auto
+														287 pop up button Auto details, Optimize for: Balance
+												288 toolbar
+													289 toggle button Description: Dictate (Speech to Text) (⌘I), Value: 0
+														290 text 
+													291 button (disabled) Send [⌥] Send to New Chat (⇧⌘Enter)
+														292 text 
+											293 toolbar
+												294 pop up button Copilot
+													295 text 
+													296 text Copilot
+												297 container Pick Mode and Permissions, Interactive, Manual permissions
+													298 pop up button Pick Mode, Interactive
+												299 toggle button Description: Allow connections from other machines and vscode.dev/agents, Value: 0
+													300 text 
+						301 container
+							302 container remote
+								303 button remote
+							304 container BenchLevel (Git) - feature/lab-1*, Checkout Branch/Tag...
+								305 button BenchLevel (Git) - feature/lab-1*, Checkout Branch/Tag...
+									306 text 
+									307 text  feature/lab-1*
+							308 container BenchLevel (Git) - Publish Branch
+								309 button BenchLevel (Git) - Publish Branch
+							310 container Show the GitLens Commit Graph
+								311 button Show the GitLens Commit Graph
+							312 container rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;    [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "What is this?") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "Settings")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 "Hide") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "Learn about Launchpad") organizes your pull requests into actionable groups to help you focus and keep your team u
+								313 button rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;    [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "What is this?") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "Settings")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 "Hide") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "Learn about Launchpad") organizes your pull requests into actionable groups to help you focus and keep your team u
+									314 text 
+									315 text 
+									316 text  Launchpad
+							317 container No Problems
+								318 button No Problems
+									319 text 
+									320 text  0 
+									321 text 
+									322 text  0
+							323 container globe Connected to Discord, Connected to Discord
+								324 button globe Connected to Discord, Connected to Discord
+									325 text 
+									326 text  Connected to Discord
+							327 container Notifications
+								328 button Notifications
+							329 container broadcast Go Live, Click to run live server
+								330 button broadcast Go Live, Click to run live server
+									331 text 
+									332 text  Go Live
+							333 container Copilot status
+								334 button Copilot status
+							335 container Screen Reader Optimized
+								336 button Screen Reader Optimized
+					337 text Info: Wokwi: VCD exported to wokwi.vcd
+					338 container
+						339 content list Info: Wokwi: VCD exported to wokwi.vcd, source: Wokwi Simulator, notification
+							340 container Info: Wokwi: VCD exported to wokwi.vcd, source: Wokwi Simulator, notification, Inspect the response in the accessible view with Option+F2
+								341 container
+									342 text  Wokwi: VCD exported to wokwi.vcd
+					343 HTML content vscode-webview://0u1gqceu4jirvfv3l8361qp4hn7on2u9pqd19t2t1rb1e2fe8fas/index.html?id=7874762f-2fba-4149-9e8d-df7cc4902f86&parentId=4&origin=2685b5ee-a5ce-45bd-816f-c9b93b3a33d0&swVersion=6&extensionId=Wokwi.wokwi-vscode&platform=electron&vscode-resource-base-authority=vscode-resource.vscode-cdn.net&parentOrigin=vscode-file%3A%2F%2Fvscode-app&mountId=7bade1a0-058c-4b9d-815a-32e85c9b99ae
+						344 container Wokwi Simulator
+							345 HTML content Wokwi Embedded, URL: vscode-webview://0u1gqceu4jirvfv3l8361qp4hn7on2u9pqd19t2t1rb1e2fe8fas/index.html?id=7874762f-2fba-4149-9e8d-df7cc4902f86&parentId=4&origin=2685b5ee-a5ce-45bd-816f-c9b93b3a33d0&swVersion=6&extensionId=Wokwi.wokwi-vscode&platform=electron&vscode-resource-base-authority=vscode-resource.vscode-cdn.net&parentOrigin=vscode-file%3A%2F%2Fvscode-app&mountId=7bade1a0-058c-4b9d-815a-32e85c9b99ae
+								346 container
+									347 text Loading...
+									348 HTML content Wokwi - World's most advanced ESP32 Simulator, URL: wokwi.com/vscode/wcode?v=4.0.0&g=86289ee&u=476124848338718721
+										349 container
+											350 image
+											351 text Simulator ІО-35 Степанов Олександр Олександрович Community License
+										352 container
+											353 button Restart the simulation
+											354 button Stop the simulation
+											355 button Resume
+											356 text 00:10.641 100%
+											357 container (showing 0-154 of 170 items)
+												358 text IN
+												359 text Floating
+												360 text IN
+												361 text Floating
+												362 text IN
+												363 text Floating
+												364 text IN
+												365 text Floating
+												366 text IN
+												367 text Floating
+												368 text IN
+												369 text Floating
+												370 text UART1
+												371 text TX
+												372 text IN
+												373 text Floating
+												374 text IN
+												375 text Floating
+												376 text IN
+												377 text Floating
+												378 text UART2
+												379 text TX
+												380 text IN
+												381 text Floating
+												382 text IN
+												383 text Floating
+												384 text IN
+												385 text Floating
+												386 text IN
+												387 text Floating
+												388 text IN
+												389 text Floating
+												390 text IN
+												391 text Floating
+												392 text IN
+												393 text Floating
+												394 text IN
+												395 text Floating
+												396 text UART2
+												397 text RX
+												398 text IN
+												399 text Floating
+												400 text IN
+												401 text Floating
+												402 text IN
+												403 text Floating
+												404 text IN
+												405 text Floating
+												406 text IN
+												407 text Floating
+												408 text IN
+												409 text Floating
+												410 text IN
+												411 text Floating
+												412 text IN
+												413 text Floating
+												414 text IN
+												415 text Floating
+												416 text IN
+												417 text High
+												418 text I2C1
+												419 text SCL
+												420 text I2C1
+												421 text SDA
+												422 text OUT
+												423 text Low
+												424 text IN
+												425 text Floating
+												426 text IN
+												427 text Floating
+												428 text IN
+												429 text Floating
+												430 text IN
+												431 text Floating
+												432 text IN
+												433 text Floating
+												434 text IN
+												435 text Floating
+												436 text IN
+												437 text Floating
+												438 text IN
+												439 text Floating
+												440 text IN
+												441 text Floating
+												442 text IN
+												443 text Floating
+												444 text IN
+												445 text Floating
+												446 text IN
+												447 text Floating
+												448 text IN
+												449 text Floating
+												450 container
+													451 text INT AD0 XCL XDA SDA SCL GND VCC
+												452 container
+													453 slider Value: 341, Secondary Actions: Increment, Decrement
+													454 slider Value: 50, Secondary Actions: Increment, Decrement
+	455 close button
+	456 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	457 minimize button
+458 menu bar
+	459 Code
+	460 File
+	461 Edit
+	462 Selection
+	463 View
+	464 Go
+	465 Run
+	466 Terminal
+	467 Window
+	468 Help
+
+The focused UI element is 3 HTML content Wokwi Simulator — BenchLevel, URL: vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html
