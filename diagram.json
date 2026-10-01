@@ -1,19 +1,158 @@
 {
   "version": 1,
-  "author": "template",
+  "author": "Gordey867",
   "editor": "wokwi",
   "parts": [
     {
       "type": "board-st-nucleo-c031c6",
       "id": "nucleo",
-      "top": 0,
+      "top": 30,
       "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu",
+      "top": 40,
+      "left": 360,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "tolerance",
+      "top": 225,
+      "left": 380,
+      "attrs": {
+        "value": "341"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "calibrate",
+      "top": 345,
+      "left": 390,
+      "attrs": {
+        "color": "blue",
+        "label": "CAL"
+      }
+    },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "logic",
+      "top": 440,
+      "left": 345,
       "attrs": {}
     }
   ],
   "connections": [
-    ["$serialMonitor:TX", "nucleo:PA3", "", []],
-    ["$serialMonitor:RX", "nucleo:PA2", "", []]
+    [
+      "$serialMonitor:TX",
+      "nucleo:PA3",
+      "",
+      []
+    ],
+    [
+      "$serialMonitor:RX",
+      "nucleo:PA2",
+      "",
+      []
+    ],
+    [
+      "nucleo:PB8",
+      "imu:SCL",
+      "green",
+      []
+    ],
+    [
+      "nucleo:PB9",
+      "imu:SDA",
+      "blue",
+      []
+    ],
+    [
+      "nucleo:3V3",
+      "imu:VCC",
+      "red",
+      []
+    ],
+    [
+      "nucleo:GND.1",
+      "imu:GND",
+      "black",
+      []
+    ],
+    [
+      "imu:AD0",
+      "nucleo:GND.1",
+      "black",
+      []
+    ],
+    [
+      "tolerance:VCC",
+      "nucleo:3V3",
+      "red",
+      []
+    ],
+    [
+      "tolerance:GND",
+      "nucleo:GND.1",
+      "black",
+      []
+    ],
+    [
+      "tolerance:SIG",
+      "nucleo:PA0",
+      "orange",
+      []
+    ],
+    [
+      "calibrate:1.l",
+      "nucleo:PB0",
+      "purple",
+      []
+    ],
+    [
+      "calibrate:2.l",
+      "nucleo:GND.1",
+      "black",
+      []
+    ],
+    [
+      "logic:D0",
+      "nucleo:PB8",
+      "green",
+      []
+    ],
+    [
+      "logic:D1",
+      "nucleo:PB9",
+      "blue",
+      []
+    ],
+    [
+      "logic:D2",
+      "nucleo:PA2",
+      "orange",
+      []
+    ],
+    [
+      "logic:D3",
+      "nucleo:PB0",
+      "purple",
+      []
+    ],
+    [
+      "logic:D4",
+      "nucleo:PA5",
+      "green",
+      []
+    ],
+    [
+      "logic:GND",
+      "nucleo:GND.1",
+      "black",
+      []
+    ]
   ],
   "dependencies": {}
 }
