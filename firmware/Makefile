@@ -22,7 +22,7 @@ TARGET = firmware
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -Og
+OPT = -Os
 
 
 #######################################
@@ -36,6 +36,10 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
+Platform/platform.c \
+Devices/mpu6050.c \
+App/level.c \
+App/controller.c \
 Core/Src/main.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c \
 Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c \
@@ -116,6 +120,7 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES =  \
+-IPlatform -IDevices -IApp \
 -ICore/Inc \
 -IDrivers/STM32C0xx_HAL_Driver/Inc \
 -IDrivers/STM32C0xx_HAL_Driver/Inc/Legacy \
@@ -150,6 +155,8 @@ LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BU
 
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
+
+$(BUILD_DIR)/main.o $(BUILD_DIR)/platform.o $(BUILD_DIR)/mpu6050.o $(BUILD_DIR)/level.o $(BUILD_DIR)/controller.o: CFLAGS += -Wextra -Werror
 
 
 #######################################

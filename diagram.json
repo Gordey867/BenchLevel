@@ -42,6 +42,24 @@
       "top": 440,
       "left": 345,
       "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "sclPullup",
+      "top": -35,
+      "left": 320,
+      "attrs": {
+        "value": "4700"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "sdaPullup",
+      "top": -75,
+      "left": 320,
+      "attrs": {
+        "value": "4700"
+      }
     }
   ],
   "connections": [
@@ -151,6 +169,42 @@
       "logic:GND",
       "nucleo:GND.1",
       "black",
+      []
+    ],
+    [
+      "sclPullup:1",
+      "nucleo:3V3",
+      "red",
+      []
+    ],
+    [
+      "sclPullup:2",
+      "nucleo:PB8",
+      "green",
+      []
+    ],
+    [
+      "sdaPullup:1",
+      "nucleo:3V3",
+      "red",
+      []
+    ],
+    [
+      "sdaPullup:2",
+      "nucleo:PB9",
+      "blue",
+      []
+    ],
+    [
+      "logic:D5",
+      "nucleo:PA4",
+      "orange",
+      []
+    ],
+    [
+      "logic:D6",
+      "nucleo:PA6",
+      "purple",
       []
     ]
   ],
