@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     binutils-arm-none-eabi \
     libnewlib-arm-none-eabi \
     ca-certificates \
-    gcc python3 gcovr \
+    gcc libc6-dev python3 gcovr \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
