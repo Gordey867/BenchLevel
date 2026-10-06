@@ -1,0 +1,11 @@
+{
+  "source": "tilt-source.vcd.gz",
+  "uncompressed_sha256": "e4ae2d54119ca729f7d18bc71f868ca8e4ecc7302684ff3cb76d5c11ee5f04c4",
+  "last_timestamp_ns": 66891006475,
+  "buffer_changes_limit": 4000000,
+  "firmware_hex_sha256": "9ff9905cc3777022d4418ad57e5283903b232a4f04c1a3402ff591481ae62f62",
+  "window_original_ns": [
+    65500000000,
+    65660000000
+  ]
+}

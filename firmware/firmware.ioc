@@ -165,3 +165,7 @@ PA6.Signal=GPIO_Output
 PA6.GPIO_Label=BUS_MARK
 NVIC.I2C1_IRQn=true\:1\:0\:false\:false\:true\:true\:true\:true
 NVIC.USART2_IRQn=true\:2\:0\:false\:false\:true\:true\:true\:true
+
+ADC1.ScanConvMode=ADC_SCAN_SEQ_FIXED
+ADC1.NbrOfConversion=1
+ADC1.SamplingTimeCommon2=ADC_SAMPLETIME_79CYCLES_5

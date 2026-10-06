@@ -1,0 +1,28 @@
+Window: "normal-data.sr - PulseView", App: BenchLevelPulseView.
+0 standard window normal-data.sr - PulseView, Secondary Actions: Raise
+	1 container
+		2 split group
+			3 scroll bar (settable) -128
+		4 menu button New View, Secondary Actions: Raise
+		5 menu button Open, Secondary Actions: Raise
+		6 menu button Save As, Secondary Actions: Raise
+		7 button Zoom In
+		8 button Zoom Out
+		9 checkbox Zoom to Fit, Value: 0
+		10 checkbox Show Cursors, Value: 0
+		11 menu button normal-data.sr, Description: Connect to Device, Secondary Actions: Raise
+		12 button Description: Configure Channels, Secondary Actions: Raise
+		13 button Add protocol decoder
+		14 button Close, Description: Closes the dock widget
+		15 button Float, Description: Undocks and re-attaches the dock widget
+	16 container normal-data.sr, Secondary Actions: Raise
+		17 radio button normal-data.sr
+	18 button Description: Create New Session, Secondary Actions: Raise
+	19 button Reload, Description: Start/Stop Acquisition, Secondary Actions: Raise
+	20 button Description: Settings, Secondary Actions: Raise
+	21 close button
+	22 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	23 minimize button
+	24 text normal-data.sr - PulseView
+25 menu bar
+	26 BenchLevelPulseView

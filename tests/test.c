@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include "captured_vector.h"
+#include "captured_tilt.h"
 typedef struct {
     BusResult start_result, completion;
     uint8_t id, data[14], address, reg, value;
@@ -210,6 +212,35 @@ static void controller_events(void)
     controller_step(&c,failed+1151,false,true,0,'i');
     assert(c.pending_command=='i' || c.mpu.phase==MPU_ID);
 }
+static void long_press_once(void)
+{
+    Mock m;Controller c;controller_init(&c,mock_bus(&m),0);
+    for(unsigned t=0;t<2000;t++)controller_step(&c,t,true,true,1365,0);
+    assert(!c.long_press_fired);
+    controller_step(&c,2000,true,true,1365,0);assert(c.long_press_fired);
+    for(unsigned t=2001;t<2010;t++)controller_step(&c,t,true,true,1365,0);
+    assert(m.address==0x69);
+    controller_step(&c,2010,false,true,1365,0);controller_step(&c,2011,true,true,1365,0);
+    assert(!c.long_press_fired && c.pressed_since==2011);
+}
+static void captured_bus_vector(void)
+{
+    Mock m;Mpu6050 d;ready(&d,&m,0);
+    memcpy(m.data,captured_flat,14);
+    mpu_request(&d,150);mpu_step(&d,150);mpu_step(&d,151);
+    assert(d.sample.ax==0 && d.sample.ay==0 && d.sample.az==16384);
+    assert(d.sample.temperature==-4260 && d.sample.gx==0 && d.sample.gy==0 && d.sample.gz==0);
+    Level l;level_init(&l,150);level_tick(&l,150,false,true,1365);
+    level_sample(&l,151,d.sample.ax,d.sample.ay,d.sample.az);
+    assert(l.norm_mg==1000 && l.tolerance_mdeg==2000 && l.state==LEVEL_UNCAL);
+    memcpy(m.data,captured_tilt,14);
+    mpu_request(&d,200);mpu_step(&d,200);mpu_step(&d,201);
+    assert(d.sample.ax==9830 && d.sample.az==13107 && d.sample.ay==0);
+    calibration(&l,0);
+    level_tick(&l,1030,false,true,1365);
+    level_sample(&l,1030,d.sample.ax,d.sample.ay,d.sample.az);
+    assert(l.angle_mdeg>=36868 && l.angle_mdeg<=36870 && l.norm_mg==1000);
+}
 int main(void)
 {
     unsigned count=0;
@@ -219,6 +250,8 @@ int main(void)
     RUN(adc_range);RUN(button_bounce_hold);RUN(calibration_motion_invalid);RUN(angle_and_dwell);
     RUN(hysteresis_and_cancel);RUN(stale_and_recover_wrap);RUN(led_patterns);RUN(opposite_filter);
     RUN(controller_events);
+    RUN(long_press_once);
+    RUN(captured_bus_vector);
     printf("PASS %u tests\n",count);
     return 0;
 }

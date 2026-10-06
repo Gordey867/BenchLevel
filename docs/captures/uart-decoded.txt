@@ -1,0 +1,2 @@
+t=500 selftest=WAIT id=00 adc=0 adc_ok=0 tol_mdeg=500 ax=0 ay=0 az=0 norm_mg=0 angle_mdeg=0 state=ERROR err=OK errors=0 seq=0 halerr=0 chsel=1
+t=607 selftest=PASS id=68 adc=1365 adc_ok=1 tol_mdeg=2000 ax=0 ay=0 az=16384 norm_mg=1000 angle_mdeg=0 state=UNCAL err=OK errors=0 seq=1 halerr=0 chsel=1

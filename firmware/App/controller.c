@@ -10,6 +10,15 @@ void controller_init(Controller *c, Bus bus, uint32_t now)
 void controller_step(Controller *c, uint32_t now, bool pressed, bool adc_ok, uint16_t adc, char command)
 {
     level_tick(&c->level, now, pressed, adc_ok, adc);
+    if (pressed && !c->previous_pressed) {
+        c->pressed_since = now;
+        c->long_press_fired = false;
+    }
+    c->previous_pressed = pressed;
+    if (pressed && !c->long_press_fired && (uint32_t)(now-c->pressed_since) >= 2000U) {
+        c->pending_command = 'n';
+        c->long_press_fired = true;
+    }
     if (command == 'i' || command == 'n') c->pending_command = command;
     if (c->pending_command && c->mpu.phase == MPU_READY) {
         mpu_begin(&c->mpu, c->mpu.bus, c->pending_command == 'n' ? 0x69 : 0x68, now);

@@ -1,0 +1,68 @@
+docker build -t benchlevel-build:local docker
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 355B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:24.04
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/3] FROM docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55
+#4 resolve docker.io/library/ubuntu:24.04@sha256:534baea6a22c03a63003dbc8dbe78fe34bc0d7e595d9a9dc9834884ff530eb55 0.0s done
+#4 DONE 0.0s
+
+#5 [2/3] RUN apt-get update && apt-get install -y --no-install-recommends     make     gcc-arm-none-eabi     binutils-arm-none-eabi     libnewlib-arm-none-eabi     ca-certificates     gcc python3 gcovr     && rm -rf /var/lib/apt/lists/*
+#5 CACHED
+
+#6 [3/3] WORKDIR /workspace
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 exporting manifest sha256:7ac8fb0665a166c4afea2875aaedd72897e0ee766be81d6caf1a434ed5c892f1 done
+#7 exporting config sha256:208800fbb5903b1ddbb68dec0be0246e49b476c16a3297e3216ad7949e50cfdf done
+#7 exporting attestation manifest sha256:34e3a50659e44690a5bbe7210fb9974bf3eb758a89bb1513a5f44415aedd852f
+#7 exporting attestation manifest sha256:34e3a50659e44690a5bbe7210fb9974bf3eb758a89bb1513a5f44415aedd852f 0.0s done
+#7 exporting manifest list sha256:01a161fdf753e71555024e72fe16f0ffa65131eaf7d99a7439a06275ce4ee221 done
+#7 naming to docker.io/library/benchlevel-build:local done
+#7 unpacking to docker.io/library/benchlevel-build:local done
+#7 DONE 0.0s
+docker run --rm -v "/Users/pliffdax/Projects/university/Study/People/Гордєєв Ілля Євгенович/2026-Fall/SP/Lab01/Work/BenchLevel:/workspace" -w /workspace --user "501:20" benchlevel-build:local make -C tests test
+make: Entering directory '/workspace/tests'
+mkdir -p build
+gcc -std=c11 -Wall -Wextra -Werror -g -O0 --coverage -I../firmware/Devices -I../firmware/App test.c ../firmware/Devices/mpu6050.c ../firmware/App/level.c ../firmware/App/controller.c -lm -o build/benchlevel-tests
+In file included from ../firmware/App/level.h:3,
+                 from ../firmware/App/controller.h:3,
+                 from test.c:1:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h:9:16: fatal error: stdint.h: No such file or directory
+    9 | # include_next <stdint.h>
+      |                ^~~~~~~~~~
+compilation terminated.
+In file included from ../firmware/Devices/bus.h:3,
+                 from ../firmware/Devices/mpu6050.h:3,
+                 from ../firmware/Devices/mpu6050.c:1:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h:9:16: fatal error: stdint.h: No such file or directory
+    9 | # include_next <stdint.h>
+      |                ^~~~~~~~~~
+compilation terminated.
+In file included from ../firmware/App/level.h:3,
+                 from ../firmware/App/level.c:1:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h:9:16: fatal error: stdint.h: No such file or directory
+    9 | # include_next <stdint.h>
+      |                ^~~~~~~~~~
+compilation terminated.
+In file included from ../firmware/App/level.h:3,
+                 from ../firmware/App/controller.h:3,
+                 from ../firmware/App/controller.c:1:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h:9:16: fatal error: stdint.h: No such file or directory
+    9 | # include_next <stdint.h>
+      |                ^~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:10: build/benchlevel-tests] Error 1
+make: Leaving directory '/workspace/tests'
+make: *** [test] Error 2

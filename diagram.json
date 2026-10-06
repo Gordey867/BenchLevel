@@ -41,7 +41,7 @@
       "id": "logic",
       "top": 440,
       "left": 345,
-      "attrs": {}
+      "attrs": { "bufferSize": "4000000" }
     },
     {
       "type": "wokwi-resistor",

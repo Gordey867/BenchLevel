@@ -9,9 +9,8 @@ static volatile BusResult bus_result = BUS_OK;
 static uint8_t tx_bytes[2], *rx_bytes;
 static uint16_t rx_length, device_address;
 static bool reading;
+static volatile bool register_sent;
 static volatile bool tx_busy;
-static uint8_t rx_byte;
-static volatile char received_command;
 static char line[240];
 static bool running, adc_pending, adc_valid;
 static uint16_t adc_value;
@@ -34,9 +33,9 @@ static BusResult read_start(void *ctx, uint8_t addr, uint8_t reg, uint8_t *data,
     rx_length = (uint16_t)len;
     device_address = (uint16_t)addr << 1;
     reading = true;
+    register_sent = false;
     HAL_GPIO_TogglePin(BUS_MARK_PORT, BUS_MARK_PIN);
-    bus_result = hal_result(HAL_I2C_Master_Seq_Transmit_IT(&hi2c1, device_address,
-                                                       tx_bytes, 1, I2C_FIRST_FRAME));
+    bus_result = hal_result(HAL_I2C_Master_Transmit_IT(&hi2c1, device_address, tx_bytes, 1));
     return bus_result;
 }
 static BusResult write_start(void *ctx, uint8_t addr, uint8_t reg, uint8_t data)
@@ -50,7 +49,15 @@ static BusResult write_start(void *ctx, uint8_t addr, uint8_t reg, uint8_t data)
     bus_result = hal_result(HAL_I2C_Master_Transmit_IT(&hi2c1, (uint16_t)addr << 1, tx_bytes, 2));
     return bus_result;
 }
-static BusResult bus_poll(void *ctx) { (void)ctx; return bus_result; }
+static BusResult bus_poll(void *ctx)
+{
+    (void)ctx;
+    if (register_sent && bus_result == BUS_PENDING) {
+        register_sent = false;
+        bus_result = hal_result(HAL_I2C_Master_Receive_IT(&hi2c1, device_address, rx_bytes, rx_length));
+    }
+    return bus_result;
+}
 static void bus_cancel(void *ctx)
 {
     (void)ctx;
@@ -63,8 +70,7 @@ static void bus_cancel(void *ctx)
 void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *h)
 {
     if (h != &hi2c1) return;
-    if (reading) bus_result = hal_result(HAL_I2C_Master_Seq_Receive_IT(h, device_address,
-                                                                   rx_bytes, rx_length, I2C_LAST_FRAME));
+    if (reading) register_sent = true;
     else bus_result = BUS_OK;
 }
 void HAL_I2C_MasterRxCpltCallback(I2C_HandleTypeDef *h)
@@ -76,20 +82,19 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *h)
     if (h == &hi2c1) bus_result = (h->ErrorCode & HAL_I2C_ERROR_AF) ? BUS_NACK : BUS_ERROR;
 }
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *h) { if (h == &huart2) tx_busy = false; }
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *h)
-{
-    if (h == &huart2) {
-        received_command = (char)rx_byte;
-        HAL_UART_Receive_IT(h, &rx_byte, 1);
-    }
-}
-void HAL_UART_ErrorCallback(UART_HandleTypeDef *h)
-{
-    if (h == &huart2) HAL_UART_Receive_IT(h, &rx_byte, 1);
-}
 void I2C1_IRQHandler(void)
 {
+    /* Data interrupts stop after the final byte. TC/STOP/NACK/error interrupts
+       remain enabled. Vendor code is unchanged. */
+    if (hi2c1.XferCount == 0U) {
+        if (hi2c1.State == HAL_I2C_STATE_BUSY_TX) CLEAR_BIT(hi2c1.Instance->CR1, I2C_CR1_TXIE);
+        if (hi2c1.State == HAL_I2C_STATE_BUSY_RX) CLEAR_BIT(hi2c1.Instance->CR1, I2C_CR1_RXIE);
+    }
     HAL_I2C_EV_IRQHandler(&hi2c1);
+    if (hi2c1.XferCount == 0U) {
+        if (hi2c1.State == HAL_I2C_STATE_BUSY_TX) CLEAR_BIT(hi2c1.Instance->CR1, I2C_CR1_TXIE);
+        if (hi2c1.State == HAL_I2C_STATE_BUSY_RX) CLEAR_BIT(hi2c1.Instance->CR1, I2C_CR1_RXIE);
+    }
     HAL_I2C_ER_IRQHandler(&hi2c1);
 }
 void USART2_IRQHandler(void) { HAL_UART_IRQHandler(&huart2); }
@@ -99,13 +104,13 @@ static void log_status(uint32_t now)
     Level *l = &controller.level;
     Mpu6050 *m = &controller.mpu;
     int length = snprintf(line, sizeof(line),
-        "t=%lu selftest=%s id=%02X adc=%u adc_ok=%u tol_mdeg=%u ax=%d ay=%d az=%d norm_mg=%u angle_mdeg=%lu state=%s err=%s errors=%lu seq=%lu\r\n",
+        "t=%lu selftest=%s id=%02X adc=%u adc_ok=%u tol_mdeg=%u ax=%d ay=%d az=%d norm_mg=%u angle_mdeg=%lu state=%s err=%s errors=%lu seq=%lu halerr=%lu chsel=%lu\r\n",
         (unsigned long)now, m->phase == MPU_FAILED ? "FAIL" :
         (m->id == 0x68 && l->adc_valid && m->phase >= MPU_READY ? "PASS" : "WAIT"),
         m->id, l->adc, (unsigned)l->adc_valid, l->tolerance_mdeg,
         m->sample.ax, m->sample.ay, m->sample.az, l->norm_mg, (unsigned long)l->angle_mdeg,
         level_name(l->state), mpu_error_name(m->error), (unsigned long)controller.errors,
-        (unsigned long)m->sequence);
+        (unsigned long)m->sequence, (unsigned long)hi2c1.ErrorCode, (unsigned long)hadc1.Instance->CHSELR);
     if (length > 0 && (size_t)length < sizeof(line)) {
         tx_busy = true;
         if (HAL_UART_Transmit_IT(&huart2, (uint8_t *)line, (uint16_t)length) != HAL_OK) tx_busy = false;
@@ -117,7 +122,6 @@ void bench_init(void)
     HAL_NVIC_EnableIRQ(I2C1_IRQn);
     HAL_NVIC_SetPriority(USART2_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(USART2_IRQn);
-    HAL_UART_Receive_IT(&huart2, &rx_byte, 1);
 }
 void bench_step(void)
 {
@@ -149,13 +153,8 @@ void bench_step(void)
         adc_pending = HAL_ADC_Start(&hadc1) == HAL_OK;
         if (!adc_pending) adc_valid = false;
     }
-    uint32_t irq = __get_PRIMASK();
-    __disable_irq();
-    char command = received_command;
-    received_command = 0;
-    __set_PRIMASK(irq);
     controller_step(&controller, now, HAL_GPIO_ReadPin(CAL_PORT, CAL_PIN) == GPIO_PIN_RESET,
-                    adc_valid, adc_value, command);
+                    adc_valid, adc_value, 0);
     HAL_GPIO_WritePin(Led_GPIO_Port, Led_Pin, level_led(&controller.level, now) ? GPIO_PIN_SET : GPIO_PIN_RESET);
     if ((uint32_t)(now-last_log) >= 500U || last_state != controller.level.state ||
         (last_phase != MPU_READY && controller.mpu.phase == MPU_READY && controller.mpu.sequence == 0) ||
