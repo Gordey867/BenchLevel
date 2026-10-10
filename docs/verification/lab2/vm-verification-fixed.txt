@@ -1,0 +1,55 @@
+Fri Oct 16 13:11:19 UTC 2026
+gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+gcov (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+make: Entering directory '/home/lilbodyn/BenchLevel/tests'
+rm -rf build
+make: Leaving directory '/home/lilbodyn/BenchLevel/tests'
+make: Entering directory '/home/lilbodyn/BenchLevel/tests'
+mkdir -p build
+rm -f build/*.gcda build/*.gcno
+gcc-13 -std=c11 -Wall -Wextra -Werror -g -O0 --coverage -I../firmware/Devices -I../firmware/App test.c ../firmware/Devices/mpu6050.c ../firmware/App/level.c ../firmware/App/controller.c -lm -o build/benchlevel-tests
+rm -f build/*.gcda
+./build/benchlevel-tests
+PASS driver_order
+PASS driver_settle
+PASS driver_faults
+PASS driver_start_faults
+PASS driver_bad_id
+PASS driver_timeout_wrap
+PASS driver_busy
+PASS driver_signed_units
+PASS adc_range
+PASS button_bounce_hold
+PASS calibration_motion_invalid
+PASS angle_and_dwell
+PASS hysteresis_and_cancel
+PASS stale_and_recover_wrap
+PASS led_patterns
+PASS opposite_filter
+PASS controller_events
+PASS long_press_once
+PASS captured_bus_vector
+PASS 19 tests
+mkdir -p ../docs/verification/lab2/coverage
+gcovr --root .. --filter '../firmware/(App|Devices)/' --txt ../docs/verification/lab2/coverage/summary.txt --json-summary ../docs/verification/lab2/coverage/summary.json --html-details ../docs/verification/lab2/coverage/index.html --fail-under-line 90
+(INFO) Reading coverage data...
+(INFO) Writing coverage report...
+cat ../docs/verification/lab2/coverage/summary.txt
+------------------------------------------------------------------------------
+                           GCC Code Coverage Report
+Directory: ..
+------------------------------------------------------------------------------
+File                                       Lines    Exec  Cover   Missing
+------------------------------------------------------------------------------
+firmware/App/controller.c                     33      33   100%
+firmware/App/level.c                          85      85   100%
+firmware/Devices/mpu6050.c                    74      72    97%   63,76
+------------------------------------------------------------------------------
+TOTAL                                        192     190    99%
+------------------------------------------------------------------------------
+make: Leaving directory '/home/lilbodyn/BenchLevel/tests'
+9ff9905cc3777022d4418ad57e5283903b232a4f04c1a3402ff591481ae62f62  firmware/build/firmware.hex
+sigrok-cli 0.7.2
+PASS sigrok reads 10 SR captures
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2        60G   54G  2.8G  96% /

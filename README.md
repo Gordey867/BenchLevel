@@ -19,3 +19,5 @@ make coverage
 [Звіт ЛР1](docs/lab1-report.pdf) · [Звіт ЛР2](docs/lab2-report.pdf) · [Текст ЛР1](docs/report.md) · [Текст ЛР2](docs/lab2-report.md)
 
 Локальні теги `lab1` і `lab2` фіксують завершені етапи. 19 host-тестів перевіряють App/Devices. Реальні записи Wokwi та PulseView розміщено в docs/captures і docs/screenshots. Фізичну плату не випробувано; симуляція не підтверджує точність приладу, електричні фронти або бюджет живлення.
+
+У перевіреній VM Ubuntu 24.04 доступна пряма збірка `make -C firmware all` та `make -C tests test CC=gcc-13`. Для coverage потрібні узгоджені GCC/gcov; перевірено версії 13.3.

@@ -1,0 +1,126 @@
+{
+  "adc-period.pvs": {
+    "bytes": 174,
+    "sha256": "2af02b12843341f777ad10fde21bc0599720c528a12c0b75e0a2c4d17dc0a4e9"
+  },
+  "adc-period.sr": {
+    "bytes": 4580,
+    "sha256": "0a8a0fa7e296523c37b619ae32885cc0e99267b6dc99ac9e470fcacbe6219cfa"
+  },
+  "adc-period.vcd": {
+    "bytes": 44345,
+    "sha256": "cb260ef22db733c74e5a4962f8a0e36f81ca4c1fa759539b7ccee5e912cc2769"
+  },
+  "address-nack-focus.pvs": {
+    "bytes": 427,
+    "sha256": "71463dfe03f60cc7332d2860d2f03c03329f60c135ebd26f8078b720c1bc40b2"
+  },
+  "address-nack-focus.sr": {
+    "bytes": 478,
+    "sha256": "759d7d06a7f043138a7787c22fee62ad4def99c6b089457be7ec5002464d75ff"
+  },
+  "address-nack-focus.vcd": {
+    "bytes": 753,
+    "sha256": "9ea337f467c08acc34d75a582621d5db79782e1d96201bf04ea530e79bfad2ff"
+  },
+  "address-nack.vcd": {
+    "bytes": 4767000,
+    "sha256": "3e0f4a3672aaf430f4492eea3b6b5438bbc66b9314d61c065f1384b4082f2cff"
+  },
+  "button-calibration.pvs": {
+    "bytes": 173,
+    "sha256": "d848ecbcebf4b4934e00c701999856bdf7320fa5ac23d21ff1a0af428e04a5a0"
+  },
+  "button-calibration.sr": {
+    "bytes": 16325,
+    "sha256": "e8dec9b9b3c4c737de5e9ce43b1584bb250678160e6b6fe8812bef7275e2a4fa"
+  },
+  "button-calibration.vcd": {
+    "bytes": 152369,
+    "sha256": "5172e6a51edeefe5cacc302afe4392dcd0c6b2afcf70bce0b332f31e869a8885"
+  },
+  "first-failure.vcd": {
+    "bytes": 651716,
+    "sha256": "0fbd8b710e3795152441ff814d32a33bd4964fc73443559f048bcd20ce138efd"
+  },
+  "interaction.vcd.gz": {
+    "bytes": 2649893,
+    "sha256": "9104ab86944867348c87c5fc9b8b5b16b906d5b9df1a485cd45157bb867bc312"
+  },
+  "lab1/i2c-probe.sr": {
+    "bytes": 12882,
+    "sha256": "9c8487709a36ff841c7cd7f679b7d5ab30bb0900cb8fd66b516d0252f09e7709"
+  },
+  "lab1/i2c-probe.vcd": {
+    "bytes": 34326,
+    "sha256": "15c5b498dab92eb638dbbf76b8985ddf9348ecc79502cc7a0825c5739aa80f9e"
+  },
+  "nack-window.sr": {
+    "bytes": 536,
+    "sha256": "064182dda26b681fdb5277d1bb65e82bd4cbdd22e082b96c57d90ca2f3efa128"
+  },
+  "nack-window.vcd": {
+    "bytes": 819,
+    "sha256": "faedaffea4f7ade4c58107bb0cb6c2f8b51481686f907d6c604ca921a41a9112"
+  },
+  "normal-data.pvs": {
+    "bytes": 427,
+    "sha256": "71463dfe03f60cc7332d2860d2f03c03329f60c135ebd26f8078b720c1bc40b2"
+  },
+  "normal-data.sr": {
+    "bytes": 575,
+    "sha256": "ee168ef0c946557cf6f6e873becf6b0b6b4f39882ba6b2b826f8ab5f87208c69"
+  },
+  "normal-data.vcd": {
+    "bytes": 4774,
+    "sha256": "9db6720303aabab85f5e4c85c7d0d5c64c43666c5690290c06bb51784b4502a9"
+  },
+  "normal-id.pvs": {
+    "bytes": 427,
+    "sha256": "71463dfe03f60cc7332d2860d2f03c03329f60c135ebd26f8078b720c1bc40b2"
+  },
+  "normal-id.sr": {
+    "bytes": 647,
+    "sha256": "335241b93932beb2bb423e2b2c36a2822e87730ab7860fab33137ddf44395321"
+  },
+  "normal-id.vcd": {
+    "bytes": 1849,
+    "sha256": "e6a7422d2884592ee4136103a8bf269017d1a5784fa077d602818df4d6a15054"
+  },
+  "normal.sr": {
+    "bytes": 4317,
+    "sha256": "50e91561bf2a26b2d324aba49a728fa83a554654f4c75121a3aeb999b3d50539"
+  },
+  "normal.vcd": {
+    "bytes": 39278,
+    "sha256": "0425ddac8a8e3dd5eecd8a7a3c6f5e2f7b68030eb7ce1a5bff8b6d6d3671e97a"
+  },
+  "tilt-source.vcd.gz": {
+    "bytes": 2185329,
+    "sha256": "ab69df59cabdba0d30f908fed44c032ed8f66b5575773755932b690cb270be85"
+  },
+  "tilt.pvs": {
+    "bytes": 427,
+    "sha256": "71463dfe03f60cc7332d2860d2f03c03329f60c135ebd26f8078b720c1bc40b2"
+  },
+  "tilt.sr": {
+    "bytes": 3370,
+    "sha256": "22e4e405b751cfc2e493d53da63e41477f55100a30953d78e7647612e4c47457"
+  },
+  "tilt.vcd": {
+    "bytes": 32956,
+    "sha256": "af13a535db2d8f4765331de70b0c13a1d1ad08ce8e89288bfe2658428870fe63"
+  },
+  "uart-selftest.pvs": {
+    "bytes": 723,
+    "sha256": "a289ecf6b022100e2a63c2a2711d3c98cc32d80e55e6024973394ad246b094e4"
+  },
+  "uart-selftest.sr": {
+    "bytes": 686,
+    "sha256": "0768b60c061b9e78fd983516d0522dd34fc23d24026b04ca7de84495f58af54b"
+  },
+  "uart-selftest.vcd": {
+    "bytes": 2892,
+    "sha256": "d65d88e6ee216a0d05d8377e6d98972cc4663d7261c548724d27ca9ab4621cdd"
+  }
+}
