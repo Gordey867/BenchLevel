@@ -1,19 +1,23 @@
 # BenchLevel
 
-Вирівнювання платформи.
+Індикатор відхилення від каліброваної площини на Nucleo-C031C6. Гордєєв Ілля Євгенович, ІО-35.
 
-Гордєєв Ілля Євгенович, ІО-35.
+MPU6050 через I2C вимірює гравітацію; потенціометр задає допуск 0,5..5°, кнопка CAL калібрує еталон. LED показує UNCAL, CAL, LEVEL, TILT та ERROR. HAL STM32C0 збережено.
 
-Компоненти: MPU6050 I2C, потенціометр ADC, кнопка GPIO.
+```sh
+make build
+make test
+make coverage
+```
 
-Середовище: Ubuntu 24.04, Docker, STM32 HAL, Wokwi. Платформа Nucleo-C031C6.
+Потрібні Docker, make і Python 3. Відкрийте папку у VS Code, F1 → Wokwi: Start Simulator. Якщо симулятор лише відкрився, натисніть зелену кнопку Start. UART 115200 8N1 відкривається всередині Wokwi. `make flash` і `make monitor` показують команду запуску симуляції.
 
-Індикатор відхилення від каліброваної площини. ЛР1 перевіряє UART/LED, ADC init і доступність I²C. ЛР2 додає калібрування, вимірювання й обробку помилок.
+Для калібрування встановіть Acceleration X=0, Y=0, Z=1 g, коротко натисніть CAL і тримайте датчик нерухомо близько секунди. Зміна Acceleration X=0,6, Z=0,8 g дає близько 36,87° і TILT після фільтра та витримки. Поля Rotation задають кутову швидкість і для цієї демонстрації не потрібні. Потенціометр Home/End задає ADC 0/4095. Утримання CAL 2 с викликає запит до відсутнього 0x69, ERROR і повторний init через 1 с. Після відновлення потрібне нове калібрування. Команди UART у поточному інтерфейсі не використовуються.
 
-`make build` збирає прошивку. Схема `diagram.json`, налаштування Wokwi `wokwi.toml`.
+[PRD](docs/PRD.md) · [Розведення](docs/pinout.md) · [Компоненти й джерела](docs/hardware-components.md) · [Архітектура](docs/architecture.md) · [Аналіз захоплень](docs/captures/analysis.md) · [Версії](docs/versions.md)
 
-У VS Code відкрийте цю папку, F1 → Wokwi: Start Simulator. UART 115200 8N1 відкривається всередині симулятора. `make flash` і `make monitor` показують цю команду для форми B.
+[Звіт ЛР1](docs/lab1-report.pdf) · [Звіт ЛР2](docs/lab2-report.pdf) · [Текст ЛР1](docs/report.md) · [Текст ЛР2](docs/lab2-report.md)
 
-[PRD](docs/PRD.md) · [Компоненти](docs/hardware-components.md) · [Звіт ЛР1](docs/report.md) · [Перевірки](docs/verification/lab1)
+Локальні теги `lab1` і `lab2` фіксують завершені етапи. 19 host-тестів перевіряють App/Devices. Реальні записи Wokwi та PulseView розміщено в docs/captures і docs/screenshots. Фізичну плату не випробувано; симуляція не підтверджує точність приладу, електричні фронти або бюджет живлення.
 
-Cortex-M0+ працює без FPU. Параметри Cortex-M4 із прикладу методички для цієї плати непридатні. Симуляція не підтверджує похибку фізичного приладу.
+У перевіреній VM Ubuntu 24.04 доступна пряма збірка `make -C firmware all` та `make -C tests test CC=gcc-13`. Для coverage потрібні узгоджені GCC/gcov; перевірено версії 13.3.

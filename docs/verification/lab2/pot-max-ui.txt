@@ -1,0 +1,241 @@
+Window: "Wokwi Simulator — BenchLevel", App: Code.
+0 standard window Wokwi Simulator — BenchLevel, Secondary Actions: Raise
+	1 container Wokwi Simulator — BenchLevel
+		2 container
+			3 HTML content Wokwi Simulator — BenchLevel, URL: vscode-file://vscode-app/Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/code/electron-browser/workbench/workbench.html
+				4 container
+					5 container
+						6 container
+							7 toolbar
+								8 button (disabled) Go Back (⌃-)
+									9 text 
+								10 button (disabled) Go Forward (⌃⇧-)
+									11 text 
+								12 toolbar Agent Status
+									13 button Open Quick Access
+									14 container
+										15 button Toggle Chat
+											16 button Toggle Chat
+												17 text 
+										18 pop up button More Actions
+							19 toolbar
+								20 button Open in Agents Window (⇧⌥⌘A)
+							21 toolbar Title actions
+								22 button Customize Layout...
+									23 text 
+								24 toggle button Description: Toggle Primary Side Bar (⌘B), Value: 0
+									25 text 
+								26 toggle button Description: Toggle Panel (⌘J), Value: 1
+									27 text 
+								28 toggle button Description: Toggle Secondary Side Bar (⌥⌘B), Value: 0
+									29 text 
+						30 container
+							31 container
+								32 tab group Active View Switcher
+									33 tab (settable, integer) Explorer (⇧⌘E), Value: 0
+										34 container Explorer (⇧⌘E)
+											35 text 
+									36 tab (settable, integer) Search (⇧⌘F), Value: 0
+										37 container Search (⇧⌘F)
+											38 text 
+									39 tab (settable, integer) Description: Source Control (⌃⇧G) - 61 pending changes, Value: 0
+										40 container Source Control (⌃⇧G) - 61 pending changes
+											41 text 
+										42 container Source Control (⌃⇧G) - 61 pending changes
+											43 text 61
+									44 tab (settable, integer) Run and Debug (⇧⌘D), Value: 0
+										45 container Run and Debug (⇧⌘D)
+											46 text 
+									47 tab (settable, integer) Remote Explorer, Value: 0
+										48 container Remote Explorer
+											49 text 
+									50 tab (settable, integer) Description: Extensions (⇧⌘X) - Deprecated extensions detected. Review them and migrate to alternatives., Value: 0
+										51 container Extensions (⇧⌘X) - Deprecated extensions detected. Review them and migrate to alternatives.
+											52 text 
+										53 container Extensions (⇧⌘X) - Deprecated extensions detected. Review them and migrate to alternatives.
+											54 text 
+									55 tab (settable, integer) Description: GitLens, Value: 0
+										56 container GitLens
+											57 text 
+									58 tab (settable, integer) GitLens Inspect, Value: 0
+										59 container GitLens Inspect
+											60 text 
+									61 tab (settable, integer) Description: GitHub Actions, Value: 0
+										62 container GitHub Actions
+									63 tab (settable, integer) Description: Containers, Value: 0
+										64 container Containers
+									65 tab (settable, integer) Description: Docker Compose, Value: 0
+										66 container Docker Compose
+									67 tab (settable, integer) Description: TODOs, Value: 0
+										68 container TODOs
+									69 tab (settable, integer) Python, Value: 0
+										70 container Python
+									71 tab (settable, integer) Description: Additional Views, Value: 0
+										72 container Additional Views
+											73 text 
+								74 toolbar Manage
+									75 pop up button Accounts
+										76 container Accounts
+											77 text 
+									78 pop up button Manage
+										79 container Manage
+											80 text 
+							81 container
+								82 container
+									83 container
+										84 container
+											85 tab group
+												86 tab (selected) Description: Wokwi Simulator, Value: 1
+													87 container Wokwi Simulator
+														88 text Wokwi Simulator
+													89 toolbar Tab actions
+														90 button Close (⌘W)
+															91 text 
+											92 toolbar Editor actions
+												93 button Run Code (⌃⌥N)
+													94 text 
+												95 button Split Editor Right (⌘\) [⌥] Split Editor Down
+													96 text 
+												97 pop up button More Actions...
+													98 text 
+								99 container
+									100 tab group Active View Switcher
+										101 tab (settable, integer) Problems (⇧⌘M), Value: 0
+											102 container Problems (⇧⌘M)
+												103 text Problems
+										104 tab (settable, integer) Output (⇧⌘U), Value: 0
+											105 container Output (⇧⌘U)
+												106 text Output
+										107 tab (settable, integer) Debug Console (⇧⌘Y), Value: 0
+											108 container Debug Console (⇧⌘Y)
+												109 text Debug Console
+										110 tab (selected) Terminal, Value: 1
+											111 container Terminal
+												112 text Terminal
+										113 tab (settable, integer) Ports, Value: 0
+											114 container Ports
+												115 text Ports
+									116 toolbar Terminal actions
+										117 button Focus Terminal (⌘↓) [⌥] Split Terminal (⌘\)
+											118 text A
+											119 text Wokwi Terminal
+										120 button New Terminal [⌥] Split Terminal (⌘\)
+											121 button New Terminal [⌥] Split Terminal (⌘\)
+										122 pop up button Launch Profile...
+										123 button Split Terminal (⌘\)
+										124 button Kill Terminal
+										125 pop up button Views and More Actions...
+									126 toolbar
+										127 toggle button Description: Maximize Panel, Value: 0
+											128 text 
+										129 button Hide Panel (⌘J)
+											130 text 
+									131 container
+										132 container
+											133 container
+												134 container
+													135 content list
+														136 text chsel=1
+														137 text t=315806 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6304 halerr=0 
+														138 text chsel=1
+														139 text t=316306 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6314 halerr=0 
+														140 text chsel=1
+														141 text t=316806 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6324 halerr=0 
+														142 text chsel=1
+														143 text t=317306 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6334 halerr=0 
+														144 text chsel=1
+														145 text t=317806 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6344 halerr=0 
+														146 text chsel=1
+														147 text t=318306 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6354 halerr=0 
+														148 text chsel=1
+														149 text t=318806 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6364 halerr=0 
+														150 text chsel=1
+														151 text t=319306 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6374 halerr=0 
+														152 text chsel=1
+														153 text t=319806 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6384 halerr=0 
+														154 text chsel=1
+													155 text t=312306 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6234 halerr=0 chsel=1 t=313306 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6254 halerr=0 chsel=1 t=313806 selftest=PASS id=68 adc=4095 adc_ok=1 tol_mdeg=5000 ax=9830 ay=0 az=13107 norm_mg=1000 angle_mdeg=36869 state=TILT err=OK errors=0 seq=6264 halerr=0 chsel=1 t=314306 selft
+													156 image
+													157 text field (settable) Terminal 2, Wokwi Terminal Use ⌥F1 for terminal accessibility help
+													158 image
+													159 image
+						160 container
+							161 container remote
+								162 button remote
+							163 container BenchLevel (Git) - feature/lab-2*, Checkout Branch/Tag...
+								164 button BenchLevel (Git) - feature/lab-2*, Checkout Branch/Tag...
+									165 text 
+									166 text  feature/lab-2*
+							167 container BenchLevel (Git) - Publish Branch
+								168 button BenchLevel (Git) - Publish Branch
+							169 container Show the GitLens Commit Graph
+								170 button Show the GitLens Commit Graph
+							171 container rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;    [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "What is this?") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "Settings")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 "Hide") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "Learn about Launchpad") organizes your pull requests into actionable groups to help you focus and keep your team u
+								172 button rocket gitlens-unplug Launchpad, GitLens Launchpad ᴘʀᴏ    &mdash;    [$(question)](command:gitlens.launchpad.indicator.action?%22info%22 "What is this?") [$(gear)](command:workbench.action.openSettings?%22gitlens.launchpad%22 "Settings")  |  [$(circle-slash) Hide](command:gitlens.launchpad.indicator.action?%22hide%22 "Hide") --- [Launchpad](command:gitlens.launchpad.indicator.action?%22info%22 "Learn about Launchpad") organizes your pull requests into actionable groups to help you focus and keep your team u
+									173 text 
+									174 text 
+									175 text  Launchpad
+							176 container No Problems
+								177 button No Problems
+									178 text 
+									179 text  0 
+									180 text 
+									181 text  0
+							182 container globe Connected to Discord, Connected to Discord
+								183 button globe Connected to Discord, Connected to Discord
+									184 text 
+									185 text  Connected to Discord
+							186 container Notifications
+								187 button Notifications
+							188 container broadcast Go Live, Click to run live server
+								189 button broadcast Go Live, Click to run live server
+									190 text 
+									191 text  Go Live
+							192 container Copilot status
+								193 button Copilot status
+							194 container Screen Reader Optimized
+								195 button Screen Reader Optimized
+					196 text Info: Wokwi: VCD exported to wokwi.vcd
+					197 HTML content vscode-webview://0u1gqceu4jirvfv3l8361qp4hn7on2u9pqd19t2t1rb1e2fe8fas/index.html?id=7874762f-2fba-4149-9e8d-df7cc4902f86&parentId=4&origin=2685b5ee-a5ce-45bd-816f-c9b93b3a33d0&swVersion=6&extensionId=Wokwi.wokwi-vscode&platform=electron&vscode-resource-base-authority=vscode-resource.vscode-cdn.net&parentOrigin=vscode-file%3A%2F%2Fvscode-app&mountId=7bade1a0-058c-4b9d-815a-32e85c9b99ae
+						198 container Wokwi Simulator
+							199 HTML content Wokwi Embedded, URL: vscode-webview://0u1gqceu4jirvfv3l8361qp4hn7on2u9pqd19t2t1rb1e2fe8fas/index.html?id=7874762f-2fba-4149-9e8d-df7cc4902f86&parentId=4&origin=2685b5ee-a5ce-45bd-816f-c9b93b3a33d0&swVersion=6&extensionId=Wokwi.wokwi-vscode&platform=electron&vscode-resource-base-authority=vscode-resource.vscode-cdn.net&parentOrigin=vscode-file%3A%2F%2Fvscode-app&mountId=7bade1a0-058c-4b9d-815a-32e85c9b99ae
+								200 container
+									201 text Loading...
+									202 HTML content Wokwi - World's most advanced ESP32 Simulator, URL: wokwi.com/vscode/wcode?v=4.0.0&g=86289ee&u=476124848338718721
+										203 container
+											204 container
+												205 image
+												206 text Simulator ІО-35 Степанов Олександр Олександрович Community License
+											207 container
+												208 button Restart the simulation
+												209 button Stop the simulation
+												210 button Pause
+											211 text 05:20.742 100%
+											212 container
+												213 container
+													214 text INT AD0 XCL XDA SDA SCL GND VCC
+												215 container
+													216 slider Value: 1023, Secondary Actions: Increment, Decrement
+													217 slider Value: 50, Secondary Actions: Increment, Decrement
+												218 container
+													219 button CAL blue pushbutton
+														220 image
+													221 text CAL
+												222 container
+													223 text D0 D1 D2 D3 D4 D5 D6 D7 GND LOGIC 1.00M samples
+	224 close button
+	225 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	226 minimize button
+227 menu bar
+	228 Code
+	229 File
+	230 Edit
+	231 Selection
+	232 View
+	233 Go
+	234 Run
+	235 Terminal
+	236 Window
+	237 Help
+
+The focused UI element is 216 slider Value: 1023, Secondary Actions: Increment, Decrement

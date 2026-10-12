@@ -1,0 +1,8 @@
+{
+  "source": "interaction.vcd.gz",
+  "uncompressed_sha256": "f037fd1c2682be70b5b43a51e4671ce4a8842386ac7f50b754318cf3b400a0cb",
+  "uncompressed_bytes": 15873704,
+  "firmware_hex_sha256": "9ff9905cc3777022d4418ad57e5283903b232a4f04c1a3402ff591481ae62f62",
+  "note": "Real export hit the default 1,000,000-change buffer at 79.605485150 s. Later UI interactions are not present in this recording. Preserved as evidence of the discovered capture limit.",
+  "last_vcd_timestamp_ns": 79605485150
+}

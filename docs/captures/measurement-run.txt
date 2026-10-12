@@ -1,0 +1,13 @@
+PASS raw edge decoding agrees with sigrok: D1/ACK, 14 data bytes, final master NACK; D2/address NACK
+{
+  "source_sha256": "3e0f4a3672aaf430f4492eea3b6b5438bbc66b9314d61c065f1384b4082f2cff",
+  "adc_period_ms": {
+    "min": 49.918225,
+    "median": 49.971475,
+    "max": 50.0867
+  },
+  "normal_start_ns": 606683250,
+  "normal_duration_us": 1365.0,
+  "nack_start_ns": 24527384825,
+  "nack_duration_us": 105.0
+}

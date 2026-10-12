@@ -1,0 +1,29 @@
+Window: "address-nack-focus.sr - PulseView", App: BenchLevelPulseView.
+0 standard window address-nack-focus.sr - PulseView, Secondary Actions: Raise
+	1 container
+		2 split group
+			3 scroll bar (settable) -128
+		4 menu button New View, Secondary Actions: Raise
+		5 menu button Open, Secondary Actions: Raise
+		6 menu button Save As, Secondary Actions: Raise
+		7 button Zoom In
+		8 button Zoom Out
+		9 checkbox Zoom to Fit, Value: 0
+		10 checkbox Show Cursors, Value: 0
+		11 menu button address-nack-focus.sr, Description: Connect to Device, Secondary Actions: Raise
+		12 button Description: Configure Channels, Secondary Actions: Raise
+		13 button Add protocol decoder
+		14 button Close, Description: Closes the dock widget
+		15 button Float, Description: Undocks and re-attaches the dock widget
+	16 container address-nack-focus.sr, Secondary Actions: Raise
+		17 radio button normal-data.sr
+		18 radio button address-nack-focus.sr
+	19 button Description: Create New Session, Secondary Actions: Raise
+	20 button Reload, Description: Start/Stop Acquisition, Secondary Actions: Raise
+	21 button Description: Settings, Secondary Actions: Raise
+	22 close button
+	23 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	24 minimize button
+	25 text address-nack-focus.sr - PulseView
+26 menu bar
+	27 BenchLevelPulseView

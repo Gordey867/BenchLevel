@@ -1,0 +1,18 @@
+sigrok-cli 0.7.2
+
+Libraries and features:
+- libsigrok 0.5.2/5:1:1 (rt: 0.5.2/5:1:1).
+ - Libs:
+  - glib 2.90.0 (rt: 2.90.1/9001:1)
+  - libzip 1.11.4
+  - libserialport 0.1.1/1:0:1 (rt: 0.1.1/1:0:1)
+  - libusb-1.0 1.0.30.12037 API 0x0100010c
+  - hidapi 0.15.0
+  - libftdi 1.5
+  - Host: aarch64-apple-darwin27.0.0, little-endian.
+  - SCPI backends: TCP, RPC, serial, USBTMC.
+- libsigrokdecode 0.5.3/6:1:2 (rt: 0.5.3/6:1:2).
+ - Libs:
+  - glib 2.88.3 (rt: 2.90.1/9001:1)
+  - Python 3.14.7 / 0x30e07f0 (API 1013, ABI 3)
+  - Host: aarch64-apple-darwin27.0.0, little-endian.

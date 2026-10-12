@@ -22,7 +22,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include <stdio.h>
+#include "board.h"
 
 /* USER CODE END Includes */
 
@@ -65,15 +65,6 @@ static void MX_USART2_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-int __io_putchar(int ch)
-{
-  uint8_t byte = (uint8_t)ch;
-  if (HAL_UART_Transmit(&huart2, &byte, 1, HAL_MAX_DELAY) != HAL_OK)
-  {
-    return EOF;
-  }
-  return ch;
-}
 
 /* USER CODE END 0 */
 
@@ -110,8 +101,7 @@ int main(void)
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 
-  printf("BenchLevel lab1 ready; STM32C031C6 HAL; UART=115200 8N1\r\n");
-  printf("init gpio=OK i2c=OK uart=OK adc=OK\r\n");
+  bench_init();
 
   /* USER CODE END 2 */
 
@@ -122,11 +112,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_StatusTypeDef probe = HAL_I2C_IsDeviceReady(&hi2c1, 0x68U << 1, 1, 20);
-    printf("probe addr=0x68 status=%u\r\n", (unsigned)probe);
-    HAL_GPIO_TogglePin(Led_GPIO_Port, Led_Pin);
-    printf("tick %lu\r\n", (unsigned long)(HAL_GetTick() / 1000U));
-    HAL_Delay(1000);
+    bench_step();
   }
   /* USER CODE END 3 */
 }
@@ -273,7 +259,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : User_Button_Pin */
   GPIO_InitStruct.Pin = User_Button_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(User_Button_GPIO_Port, &GPIO_InitStruct);
 
@@ -285,13 +271,21 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(Led_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
+  GPIO_InitStruct.Pin = CAL_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(CAL_PORT, &GPIO_InitStruct);
+  GPIO_InitStruct.Pin = ADC_MARK_PIN | BUS_MARK_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
+/* USER CODE BEGIN ADC1_Init */
 static void MX_ADC1_Init(void)
 {
   ADC_ChannelConfTypeDef channel = {0};
@@ -305,7 +299,7 @@ static void MX_ADC1_Init(void)
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.ScanConvMode = ADC_SCAN_SEQ_FIXED;
   hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
   hadc1.Init.NbrOfConversion = 1;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
@@ -320,6 +314,7 @@ static void MX_ADC1_Init(void)
   channel.SamplingTime = ADC_SAMPLINGTIME_COMMON_1;
   if (HAL_ADC_ConfigChannel(&hadc1, &channel) != HAL_OK) Error_Handler();
 }
+/* USER CODE END ADC1_Init */
 
 /* USER CODE BEGIN 4 */
 
