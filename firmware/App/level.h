@@ -9,6 +9,9 @@ typedef struct {
     bool candidate_set, adc_valid;
     uint32_t button_since, last_good, candidate_since, angle_mdeg, samples;
     uint16_t adc, tolerance_mdeg, norm_mg;
+    uint16_t axis_limit[2];
+    int32_t axis_mdeg[2];
+    bool fixed_limits;
     uint8_t cal_count;
     float reference[3], filtered[3], sum[3], previous[3];
 } Level;
@@ -16,6 +19,8 @@ void level_init(Level *l, uint32_t now);
 void level_tick(Level *l, uint32_t now, bool pressed, bool adc_valid, uint16_t adc);
 void level_sample(Level *l, uint32_t now, int16_t ax, int16_t ay, int16_t az);
 void level_fault(Level *l);
+void level_calibrate(Level *l);
+bool level_limits(Level *l, uint16_t x, uint16_t y);
 bool level_led(const Level *l, uint32_t now);
 const char *level_name(LevelState s);
 #endif

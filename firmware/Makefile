@@ -36,6 +36,11 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
+Platform/format.c \
+Platform/perf.c \
+Platform/calibration_flash.c \
+App/calibration_store.c \
+App/console.c \
 Platform/platform.c \
 Devices/mpu6050.c \
 App/level.c \
@@ -130,7 +135,7 @@ C_INCLUDES =  \
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
-CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+CFLAGS += $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections -flto -fstack-usage -Wstack-usage=512
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
@@ -150,12 +155,18 @@ LDSCRIPT = STM32C031C6Tx_FLASH.ld
 # libraries
 LIBS = -lc -lm -lnosys 
 LIBDIR = 
-LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
+LDFLAGS = $(MCU) -flto -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections,--print-memory-usage -fstack-usage
 
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 
-$(BUILD_DIR)/main.o $(BUILD_DIR)/platform.o $(BUILD_DIR)/mpu6050.o $(BUILD_DIR)/level.o $(BUILD_DIR)/controller.o: CFLAGS += -Wextra -Werror
+.PHONY: FORCE
+Platform/build_id.h: FORCE
+	python3 ../tools/stamp_build.py
+
+$(BUILD_DIR)/platform.o: Platform/build_id.h
+
+$(BUILD_DIR)/main.o $(BUILD_DIR)/platform.o $(BUILD_DIR)/mpu6050.o $(BUILD_DIR)/level.o $(BUILD_DIR)/controller.o $(BUILD_DIR)/calibration_store.o $(BUILD_DIR)/console.o $(BUILD_DIR)/perf.o $(BUILD_DIR)/clock_track.o $(BUILD_DIR)/calibration_flash.o: CFLAGS += -Wextra -Werror
 
 
 #######################################
@@ -169,7 +180,7 @@ OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
 $(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR) 
-	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	$(CC) -c $(CFLAGS) $< -o $@
 
 $(BUILD_DIR)/%.o: %.s Makefile | $(BUILD_DIR)
 	$(AS) -c $(CFLAGS) $< -o $@

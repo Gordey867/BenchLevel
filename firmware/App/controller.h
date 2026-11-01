@@ -6,6 +6,8 @@ typedef struct {
     Mpu6050 mpu;
     Level level;
     uint32_t last_request, failed_since, errors;
+    uint32_t requests, skipped, request_late_max;
+    uint16_t sample_period;
     bool failure_seen;
     char pending_command;
     uint32_t pressed_since;

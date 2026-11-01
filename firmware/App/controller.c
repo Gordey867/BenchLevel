@@ -6,6 +6,7 @@ void controller_init(Controller *c, Bus bus, uint32_t now)
     mpu_begin(&c->mpu, bus, 0x68, now);
     level_init(&c->level, now);
     c->last_request = now;
+    c->sample_period = 50;
 }
 void controller_step(Controller *c, uint32_t now, bool pressed, bool adc_ok, uint16_t adc, char command)
 {
@@ -40,5 +41,13 @@ void controller_step(Controller *c, uint32_t now, bool pressed, bool adc_ok, uin
         MpuSample *s = &c->mpu.sample;
         level_sample(&c->level, now, s->ax, s->ay, s->az);
     }
-    if ((uint32_t)(now-c->last_request) >= 50U && mpu_request(&c->mpu, now)) c->last_request = now;
+    uint32_t elapsed = now-c->last_request;
+    if (elapsed >= c->sample_period && mpu_request(&c->mpu, now)) {
+        uint32_t slots = elapsed/c->sample_period;
+        c->skipped += slots-1U;
+        uint32_t late = elapsed-c->sample_period;
+        if (late > c->request_late_max) c->request_late_max = late;
+        c->last_request += slots*c->sample_period;
+        ++c->requests;
+    }
 }

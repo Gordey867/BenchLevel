@@ -243,6 +243,7 @@ static void captured_bus_vector(void)
 }
 int main(void)
 {
+    extern unsigned lab3_tests(void);
     unsigned count=0;
 #define RUN(name) do { name(); ++count; printf("PASS %s\n",#name); } while(0)
     RUN(driver_order);RUN(driver_settle);RUN(driver_faults);RUN(driver_start_faults);
@@ -252,6 +253,7 @@ int main(void)
     RUN(controller_events);
     RUN(long_press_once);
     RUN(captured_bus_vector);
+    count+=lab3_tests();
     printf("PASS %u tests\n",count);
     return 0;
 }

@@ -28,6 +28,11 @@
  * Pointer to the current high watermark of the heap usage
  */
 static uint8_t *__sbrk_heap_end = NULL;
+uint32_t bench_heap_used(void)
+{
+  extern uint8_t _end;
+  return __sbrk_heap_end ? (uint32_t)(__sbrk_heap_end - &_end) : 0;
+}
 
 /**
  * @brief _sbrk() allocates memory to the newlib heap and is used by malloc

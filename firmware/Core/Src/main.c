@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "board.h"
+#include "perf.h"
 
 /* USER CODE END Includes */
 
@@ -75,7 +76,7 @@ static void MX_USART2_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  bench_stack_paint();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -113,6 +114,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     bench_step();
+    /* Busy polling is intentional; CPU load is unavailable in this candidate. */
   }
   /* USER CODE END 3 */
 }
