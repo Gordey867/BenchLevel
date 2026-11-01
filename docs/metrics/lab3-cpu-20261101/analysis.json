@@ -1,0 +1,33 @@
+{
+  "vcd_sha256": "13f8a04831e49292fcb5ba8ff6877cb29867c73667dba2a4630c731ea9e608ca",
+  "start_ns": 20000000000,
+  "end_ns": 30000000000,
+  "channels": {
+    "uart_irq": {
+      "pulses": 3340,
+      "high_ns": 53985575,
+      "window_percent": 0.53985575
+    },
+    "systick_irq": {
+      "pulses": 10000,
+      "high_ns": 15116000,
+      "window_percent": 0.15116
+    },
+    "i2c_irq": {
+      "pulses": 3200,
+      "high_ns": 76333925,
+      "window_percent": 0.76333925
+    },
+    "selected_foreground": {
+      "pulses": 10220,
+      "high_ns": 963457925,
+      "window_percent": 9.63457925
+    }
+  },
+  "irq_union_ns": 144657175,
+  "marked_union_ns": 1095065125,
+  "marked_union_percent": 10.95065125,
+  "foreground_excluding_marked_irq_ns": 950407950,
+  "foreground_excluding_marked_irq_percent": 9.5040795,
+  "note": "Instrumented selected active branches and IRQs, overlap union; excludes unmarked work and empty polls; includes marker overhead. Diagnostic ELF only; not total CPU or S2."
+}

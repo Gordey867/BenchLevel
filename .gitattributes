@@ -1,0 +1,3 @@
+# Preserve diagnostic firmware and captured UART bytes exactly, including CRLF.
+diagnostics/cpu-profile/run-profile/firmware.hex binary
+docs/metrics/lab3-cpu-20261101/uart.raw binary

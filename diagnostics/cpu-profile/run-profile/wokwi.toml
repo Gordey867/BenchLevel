@@ -1,0 +1,7 @@
+[wokwi]
+version = 1
+firmware = "firmware.hex"
+elf = "firmware.elf"
+rfc2217ServerPort = 43215
+gdbServerPort = 43216
+vcdFile = "profile.vcd"

@@ -1,0 +1,59 @@
+--- a/firmware/Platform/platform.c
++++ b/firmware/Platform/platform.c
+@@ -110,0 +111 @@
++    GPIOA->BSRR=GPIO_PIN_6;
+@@ -122,0 +124 @@
++    GPIOA->BSRR=(uint32_t)GPIO_PIN_6<<16;
+@@ -125,0 +128 @@
++    GPIOA->BSRR=GPIO_PIN_4;
+@@ -126,0 +130 @@
++    GPIOA->BSRR=(uint32_t)GPIO_PIN_4<<16;
+@@ -178 +182 @@
+-        HAL_GPIO_TogglePin(ADC_MARK_PORT,ADC_MARK_PIN);
++        /* PA4 reserved for UART ISR profiling in this diagnostic build. */
+@@ -269 +273 @@
+-        HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_1);
++        /* PB1 reserved for SysTick profiling in this diagnostic build. */
+@@ -310,0 +315,2 @@
++    /* Short adjacent-write pulses give a marker-width floor in the VCD. */
++    for (unsigned i=0;i<32;i++) { GPIOA->BSRR=GPIO_PIN_7; GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16; }
+@@ -324 +329,0 @@
+-    GPIOA->BSRR=GPIO_PIN_7;
+@@ -343 +348,6 @@
+-    uint32_t t=bench_us();adc_step(now);bench_timing_add(&timing[1],bench_us()-t);
++    bool active_adc=(adc_pending && (__HAL_ADC_GET_FLAG(&hadc1,ADC_FLAG_EOC) || now-adc_since>=5U)) ||
++                    (adc_valid && now-adc_completed>100U) || (!adc_pending && now-last_adc_start>=50U);
++    if (active_adc) GPIOA->BSRR=GPIO_PIN_7;
++    uint32_t t=bench_us();adc_step(now);
++    if (active_adc) GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16;
++    bench_timing_add(&timing[1],bench_us()-t);
+@@ -344,0 +355,2 @@
++    /* controller_step is the scheduled 1 ms control task: it always runs level_tick. */
++    GPIOA->BSRR=GPIO_PIN_7;
+@@ -345,0 +358 @@
++    GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16;
+@@ -361 +374,5 @@
+-    t=bench_us();command_step(now);bench_timing_add(&timing[2],bench_us()-t);
++    bool active_command=rx_poison || rx_tail!=rx_head;
++    if (active_command) GPIOA->BSRR=GPIO_PIN_7;
++    t=bench_us();command_step(now);
++    if (active_command) GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16;
++    bench_timing_add(&timing[2],bench_us()-t);
+@@ -369,2 +386,2 @@
+-        if (response_pending) { memcpy(line,response,strlen(response)+1U);response_pending=false;send_line(); }
+-        else if (stats_pending) { stats_line(now);send_line(); }
++        if (response_pending) { GPIOA->BSRR=GPIO_PIN_7; memcpy(line,response,strlen(response)+1U);response_pending=false;send_line(); GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16; }
++        else if (stats_pending) { GPIOA->BSRR=GPIO_PIN_7; stats_line(now);send_line(); GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16; }
+@@ -374 +391 @@
+-                status_line(now);send_line();last_log=now;last_state=controller.level.state;
++                GPIOA->BSRR=GPIO_PIN_7; status_line(now);send_line();last_log=now;last_state=controller.level.state; GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16;
+@@ -382,2 +399 @@
+-    GPIOA->BSRR=(uint32_t)GPIO_PIN_7<<16;
+-}
++}
+--- a/firmware/Core/Src/stm32c0xx_it.c
++++ b/firmware/Core/Src/stm32c0xx_it.c
+@@ -129,0 +130 @@
++  GPIOB->BSRR=GPIO_PIN_1;
+@@ -130,0 +132 @@
++  GPIOB->BSRR=(uint32_t)GPIO_PIN_1<<16;

@@ -1,0 +1,54 @@
+[
+  {
+    "host_s": 3.5410048440098763e-06,
+    "command": "VERSION"
+  },
+  {
+    "host_s": 2.0041797080193646,
+    "command": "CAL"
+  },
+  {
+    "host_s": 5.005580124998232,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 8.011164916009875,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 10.015638083015801,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 12.018689250020543,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 14.021611500007566,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 16.026712582999608,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 18.03095729101915,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 20.032197416003328,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 22.034181082999567,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 24.038244499999564,
+    "command": "STATUS"
+  },
+  {
+    "host_s": 26.042234624997946,
+    "command": "STATUS"
+  }
+]

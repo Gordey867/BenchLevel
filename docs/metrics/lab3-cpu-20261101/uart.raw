@@ -1,0 +1,84 @@
+VERSION git=c9ee9ab-diagnostic source=cpu-selected-v1
+EVT n=1 rx_us=11606000 act_us=11607000 resolution_us=1000
+t=11621 id=68 state=UNCAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=231 err=OK errors=0 nv=0 phase=0
+t=12121 id=68 state=UNCAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=241 err=OK errors=0 nv=0 phase=0
+t=12621 id=68 state=UNCAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=251 err=OK errors=0 nv=0 phase=0
+t=13121 id=68 state=UNCAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=261 err=OK errors=0 nv=0 phase=0
+t=13621 id=68 state=UNCAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=271 err=OK errors=0 nv=0 phase=0
+ACK n=2 cmd=3 ok=1 t_us=13635000
+EVT n=2 rx_us=13622000 act_us=13635000 resolution_us=1000
+t=13647 id=68 state=CAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=271 err=OK errors=0 nv=0 phase=0
+t=14147 id=68 state=CAL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=281 err=OK errors=0 nv=0 phase=0
+t=14609 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=291 err=OK errors=0 nv=0 phase=0
+t=15109 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=301 err=OK errors=0 nv=0 phase=0
+t=15609 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=311 err=OK errors=0 nv=0 phase=0
+t=16109 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=321 err=OK errors=0 nv=0 phase=0
+t=16609 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=331 err=OK errors=0 nv=0 phase=0
+EVT n=3 rx_us=16611000 act_us=16612000 resolution_us=1000
+t=16633 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=331 err=OK errors=0 nv=0 phase=0
+t=17133 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=341 err=OK errors=0 nv=0 phase=0
+t=17633 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=351 err=OK errors=0 nv=0 phase=0
+t=18133 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=361 err=OK errors=0 nv=0 phase=0
+t=18633 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=371 err=OK errors=0 nv=0 phase=0
+t=19133 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=381 err=OK errors=0 nv=0 phase=0
+t=19620 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=391 err=OK errors=0 nv=0 phase=0
+EVT n=4 rx_us=19619000 act_us=19621000 resolution_us=1000
+t=19641 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=391 err=OK errors=0 nv=0 phase=0
+t=20141 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=401 err=OK errors=0 nv=0 phase=0
+t=20641 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=411 err=OK errors=0 nv=0 phase=0
+t=21141 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=421 err=OK errors=0 nv=0 phase=0
+t=21624 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=431 err=OK errors=0 nv=0 phase=0
+EVT n=5 rx_us=21623000 act_us=21625000 resolution_us=1000
+t=21645 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=431 err=OK errors=0 nv=0 phase=0
+t=22145 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=441 err=OK errors=0 nv=0 phase=0
+t=22645 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=451 err=OK errors=0 nv=0 phase=0
+t=23145 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=461 err=OK errors=0 nv=0 phase=0
+t=23627 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=471 err=OK errors=0 nv=0 phase=0
+EVT n=6 rx_us=23627000 act_us=23628000 resolution_us=1000
+t=23649 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=471 err=OK errors=0 nv=0 phase=0
+t=24149 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=481 err=OK errors=0 nv=0 phase=0
+t=24649 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=491 err=OK errors=0 nv=0 phase=0
+t=25149 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=501 err=OK errors=0 nv=0 phase=0
+t=25627 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=511 err=OK errors=0 nv=0 phase=0
+EVT n=7 rx_us=25627000 act_us=25628000 resolution_us=1000
+t=25649 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=511 err=OK errors=0 nv=0 phase=0
+t=26149 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=521 err=OK errors=0 nv=0 phase=0
+t=26649 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=531 err=OK errors=0 nv=0 phase=0
+t=27149 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=541 err=OK errors=0 nv=0 phase=0
+t=27637 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=551 err=OK errors=0 nv=0 phase=0
+EVT n=8 rx_us=27637000 act_us=27638000 resolution_us=1000
+t=27659 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=552 err=OK errors=0 nv=0 phase=0
+t=28159 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=562 err=OK errors=0 nv=0 phase=0
+t=28659 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=572 err=OK errors=0 nv=0 phase=0
+t=29159 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=582 err=OK errors=0 nv=0 phase=0
+t=29641 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=591 err=OK errors=0 nv=0 phase=0
+EVT n=9 rx_us=29641000 act_us=29642000 resolution_us=1000
+t=29659 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=592 err=OK errors=0 nv=0 phase=0
+t=30159 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=602 err=OK errors=0 nv=0 phase=0
+t=30659 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=612 err=OK errors=0 nv=0 phase=0
+t=31159 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=622 err=OK errors=0 nv=0 phase=0
+t=31640 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=631 err=OK errors=0 nv=0 phase=0
+EVT n=10 rx_us=31640000 act_us=31641000 resolution_us=1000
+t=31659 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=632 err=OK errors=0 nv=0 phase=0
+t=32159 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=642 err=OK errors=0 nv=0 phase=0
+t=32659 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=652 err=OK errors=0 nv=0 phase=0
+t=33159 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=662 err=OK errors=0 nv=0 phase=0
+t=33644 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=671 err=OK errors=0 nv=0 phase=0
+EVT n=11 rx_us=33643000 act_us=33645000 resolution_us=1000
+t=33665 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=672 err=OK errors=0 nv=0 phase=0
+t=34165 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=682 err=OK errors=0 nv=0 phase=0
+t=34665 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=692 err=OK errors=0 nv=0 phase=0
+t=35165 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=702 err=OK errors=0 nv=0 phase=0
+t=35649 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=711 err=OK errors=0 nv=0 phase=0
+EVT n=12 rx_us=35649000 act_us=35650000 resolution_us=1000
+t=35671 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=712 err=OK errors=0 nv=0 phase=0
+t=36171 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=722 err=OK errors=0 nv=0 phase=0
+t=36671 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=732 err=OK errors=0 nv=0 phase=0
+t=37171 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=742 err=OK errors=0 nv=0 phase=0
+t=37649 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=751 err=OK errors=0 nv=0 phase=0
+EVT n=13 rx_us=37648000 act_us=37650000 resolution_us=1000
+t=37671 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=752 err=OK errors=0 nv=0 phase=0
+t=38171 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=762 err=OK errors=0 nv=0 phase=0
+t=38671 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=772 err=OK errors=0 nv=0 phase=0
+t=39171 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=782 err=OK errors=0 nv=0 phase=0
+t=39671 id=68 state=LEVEL x=0 y=0 limx=2000 limy=2000 angle=0 adc=1365 adc_ok=1 seq=792 err=OK errors=0 nv=0 phase=0
