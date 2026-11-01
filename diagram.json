@@ -41,7 +41,9 @@
       "id": "logic",
       "top": 440,
       "left": 345,
-      "attrs": { "bufferSize": "4000000" }
+      "attrs": {
+        "bufferSize": "4000000"
+      }
     },
     {
       "type": "wokwi-resistor",
@@ -161,7 +163,7 @@
     ],
     [
       "logic:D4",
-      "nucleo:PA5",
+      "nucleo:PB1",
       "green",
       []
     ],
@@ -197,14 +199,20 @@
     ],
     [
       "logic:D5",
-      "nucleo:PA4",
+      "nucleo:PA6",
       "orange",
       []
     ],
     [
       "logic:D6",
-      "nucleo:PA6",
+      "nucleo:PA3",
       "purple",
+      []
+    ],
+    [
+      "logic:D7",
+      "nucleo:PA7",
+      "orange",
       []
     ]
   ],

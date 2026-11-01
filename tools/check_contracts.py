@@ -6,7 +6,7 @@ import re
 
 root = Path(__file__).resolve().parents[1]
 allowed = {
-    "App": {"controller.h", "level.h", "mpu6050.h", "string.h", "stdint.h", "stdbool.h", "math.h"},
+    "App": {"controller.h", "level.h", "mpu6050.h", "console.h", "calibration_store.h", "string.h", "stdint.h", "stdbool.h", "math.h"},
     "Devices": {"bus.h", "mpu6050.h", "string.h", "stdint.h", "stdbool.h", "stddef.h"},
 }
 for layer, headers in allowed.items():
@@ -20,6 +20,7 @@ for key, value in {
     "PB8.Signal": "I2C1_SCL", "PB9.Signal": "I2C1_SDA", "PA0.Signal": "ADC1_IN0",
     "PA2.Signal": "USART2_TX", "PA3.Signal": "USART2_RX", "PA5.Signal": "GPIO_Output",
     "PB0.Signal": "GPIO_Input", "PB0.GPIO_PuPd": "GPIO_PULLUP",
+    "PA3.GPIO_PuPd": "GPIO_PULLUP",
     "PA4.Signal": "GPIO_Output", "PA6.Signal": "GPIO_Output",
     "ADC1.ScanConvMode": "ADC_SCAN_SEQ_FIXED", "I2C1.Timing": "0x20303E5D",
 }.items():
@@ -29,7 +30,8 @@ edges = {frozenset(edge[:2]) for edge in diagram["connections"]}
 for a, b in [("nucleo:PB8", "imu:SCL"), ("nucleo:PB9", "imu:SDA"),
              ("nucleo:PA0", "tolerance:SIG"), ("nucleo:PB0", "calibrate:1.l"),
              ("nucleo:PA2", "$serialMonitor:RX"), ("nucleo:PA3", "$serialMonitor:TX"),
-             ("nucleo:PA4", "logic:D5"), ("nucleo:PA6", "logic:D6")]:
+             ("nucleo:PA6", "logic:D5"), ("nucleo:PA3", "logic:D6"),
+             ("nucleo:PA7", "logic:D7"), ("nucleo:PB1", "logic:D4")]:
     assert frozenset((a, b)) in edges, f"Diagram mismatch: {a}, {b}"
 board = (root / "firmware/Platform/board.h").read_text()
 for text in ("CAL_PORT GPIOB", "CAL_PIN GPIO_PIN_0", "ADC_MARK_PIN GPIO_PIN_4", "BUS_MARK_PIN GPIO_PIN_6"):
