@@ -1,0 +1,25 @@
+digraph BenchLevel {
+  graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.55", fontname="Arial"];
+  node [shape=box, style="rounded,filled", fillcolor="#f1f5f9", color="#45566c", fontname="Arial", fontsize=11];
+  edge [color="#45566c", arrowsize=0.7, fontname="Arial", fontsize=9];
+  imu [label="MPU6050"];
+  i2c [label="Автомат I2C\nIRQ + тайм-аут"];
+  input [label="ADC + CAL"];
+  control [label="Контролер\nзапит сенсора 50 мс\nрівень / нахил"];
+  indicator [label="LED + телеметрія"];
+  rx [label="UART RX IRQ\nкільцевий буфер"];
+  console [label="Консоль\nобмежений розбір"];
+  tx [label="UART TX IRQ\nSTATUS / STATS / EVT"];
+  store [label="Сховище калібрування\nCRC + commit"];
+  flash [label="HAL flash\nстирання / запис"];
+  loop [label="Bare-metal super loop\nHAL SysTick: 1 мс\nопитування, без WFI"];
+  imu -> i2c -> control -> indicator;
+  input -> control;
+  rx -> console -> control;
+  console -> tx;
+  console -> store -> flash;
+  control -> store;
+  loop -> control [style=dashed, label="запуск"];
+  loop -> console [style=dashed];
+  loop -> store [style=dashed];
+}
